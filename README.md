@@ -55,5 +55,139 @@ Customers can create accounts, log in to the system, browse foods, make purchase
     <img src="https://raofin.github.io/r/img/BearBurger-Swing/(13).png" width="400">
 <p/>
 
+
+Voici un **README complet** pour ton projet **BearBurger**, prêt à être placé dans un fichier `README.md` à la racine du projet :
+
+---
+
+```markdown
+# 🐻 BearBurger
+
+> Une application de gestion de restaurant moderne, utilisant Java, Swing, Spring et FlatLaf pour une expérience utilisateur élégante et performante.
+
+## 🧾 Description
+
+**BearBurger** est une application de gestion de restaurant écrite en Java, avec une interface utilisateur soignée basée sur `FlatLaf`. Elle propose des fonctionnalités de gestion de menus, de commandes et de bases de données avec `Spring JDBC`, le tout supporté par `MySQL` ou `H2` pour le stockage.
+
+---
+
+## ✨ Fonctionnalités
+
+- Interface graphique moderne avec **FlatLaf** (thème IntelliJ One Dark)
+- Gestion des menus et commandes
+- Intégration base de données via **Spring JDBC**
+- Compatible avec **MySQL** ou **H2** (runtime embeddable)
+- Tests unitaires avec **JUnit**
+- Interface multithème (support FlatLaf IntelliJ Themes)
+- Prêt pour intégration et déploiement via un `.jar` autonome avec dépendances
+
+---
+
+## 🛠️ Technologies utilisées
+
+| Composant          | Version    | Rôle                          |
+|--------------------|------------|-------------------------------|
+| Java               | 8+         | Langage principal             |
+| Maven              | 3+         | Gestion de projet             |
+| Spring JDBC        | 5.3.20     | Accès aux données             |
+| FlatLaf            | 2.4        | Look & Feel                   |
+| H2 Database        | 2.2.224    | Base embarquée (développement)|
+| MySQL Connector/J  | 8.0.29     | Base de production            |
+| JUnit              | 4.13.2     | Tests unitaires               |
+
+---
+
+## 📦 Structure du projet
+
+```
+BearBurger/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── org/apwj/bearburger/
+│   │   │       ├── App.java          # Classe principale
+│   │   │       └── ...               # Autres classes (UI, DAO, services...)
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── java/...                  # Tests unitaires JUnit
+├── pom.xml
+└── README.md
+```
+
+---
+
+## ▶️ Lancer l’application
+
+### 1. Compilation et création du JAR exécutable :
+
+```bash
+mvn clean compile assembly:single
+```
+
+### 2. Exécution :
+
+```bash
+java -jar target/BearBurger-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+---
+
+## ⚙️ Configuration de la base de données
+
+Par défaut, l'application peut utiliser H2 pour les tests et MySQL pour la production.
+
+### Exemple `application.properties` (dans `src/main/resources/`) :
+
+```properties
+# H2 - Dev/Test
+spring.datasource.url=jdbc:h2:./data/bearburger
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+
+# MySQL - Production
+# spring.datasource.url=jdbc:mysql://localhost:3306/bearburger
+# spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+# spring.datasource.username=root
+# spring.datasource.password=yourpassword
+```
+
+---
+
+## ✅ Tests
+
+Lancer les tests unitaires avec :
+
+```bash
+mvn test
+```
+
+---
+
+## 🧠 Auteurs & Contributeurs
+
+- **Ton Nom / Équipe**
+- Contact : [email@example.com]
+
+---
+
+## 📄 Licence
+
+Projet sous licence MIT ou personnalisée – à définir.
+
+---
+
+## 🌐 Ressources
+
+- [FlatLaf - Look & Feel moderne pour Swing](https://www.formdev.com/flatlaf/)
+- [Spring JDBC Docs](https://docs.spring.io/spring-framework/docs/current/reference/html/data-access.html#jdbc)
+- [H2 Database](https://www.h2database.com/html/main.html)
+
+---
+
+
+
+
 ## License
 This project is licensed under the [MIT License](LICENSE.md).
