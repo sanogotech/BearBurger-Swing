@@ -3,10 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- Configuration de la base H2 en mémoire -->
-    <bean id="dataSource" class="org.h2.jdbcx.JdbcDataSource">
-        <property name="URL" value="jdbc:h2:mem:bearburger;DB_CLOSE_DELAY=-1;MODE=MySQL"/>
-        <property name="user" value="sa"/>
+    <bean id="dataSource" class="com.mysql.cj.jdbc.MysqlDataSource">
+        <property name="databaseName" value="bearburger_swing"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/bearburger_swing"/>
+        <property name="user" value="root"/>
         <property name="password" value=""/>
     </bean>
 
